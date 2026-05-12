@@ -6,49 +6,89 @@
 
 **Answer: C**
 
-Optimization is used as a tool in machine learning and AI, but it is not listed here as a sub-area of AI in the same way as Computer Vision, Machine Learning, and Natural Language Processing.
+- ✅ A. Computer Vision is a sub-area/application area of AI.
+- ✅ B. Machine Learning is a core sub-area of AI.
+- ❌ C. Optimization is not listed in the PPT as a sub-area of AI; it is a mathematical tool used to train models.
+- ✅ D. Natural Language Processing is a sub-area of AI.
+
+PPT statement: AI includes areas such as machine learning, computer vision, natural language processing, and robotics; optimization is a tool used inside learning algorithms.
 
 ### 1.2
 
 **Answer: B**
 
-The binomial distribution is discrete. Gaussian, Laplace, and Beta distributions are continuous.
+- ✅ A. Gaussian distribution is continuous.
+- ❌ B. Binomial distribution is discrete, so it is not a continuous distribution.
+- ✅ C. Laplace distribution is continuous.
+- ✅ D. Beta distribution is continuous.
+
+PPT statement: Binomial is a discrete distribution; Gaussian, Laplace, and Beta are continuous distributions.
 
 ### 1.3
 
-**Answer: C**
+**Answer: C (official/intended single-choice)**
 
-Following the course-intended single-choice reading, grouping body dimensions into clothing sizes is the clustering/unsupervised-learning example.
+- ⚠️ A. Workspace materials explicitly support learned data/image compression as unsupervised learning: L14 lists data compression as an unsupervised-learning practical problem, and the review notes say vector quantization can be used for image compression. Direct regression would require paired targets $(x_i,y_i)$, such as desired low-resolution images. In the official single-choice reading, this option is apparently interpreted narrowly as ordinary high-to-low resolution conversion, so it is not the selected answer; it should not be described as strictly false under the broader course materials.
+- ❌ B. Predicting the stock market is a prediction task, usually supervised if target values are available.
+- ✅ C. The option does not literally say "clustering", but it gives only unlabeled body-dimension data and asks us to determine clothing sizes. Under the course definition, this is naturally treated as unsupervised grouping/vector quantization. If target size labels were provided, it could instead be supervised classification or regression, but the option does not provide such labels.
+- ❌ D. Predicting disease from labeled medical records is supervised classification.
+
+PPT statement: Unsupervised learning uses unlabeled examples to reveal data structure or transform data for practical problems, including clustering, dimensionality reduction, autoencoders on unlabeled data, and data compression. The official single-choice answer is C; A is defensible only when interpreted as learned compression rather than deterministic resizing.
 
 ### 1.4
 
 **Answer: B**
 
-K-Nearest Neighbors is non-parametric.
+- ❌ A. Linear regression with nonlinear basis functions still learns a finite parameter vector, so it is parametric.
+- ✅ B. K-Nearest Neighbors stores training samples and has no fixed-size learned parameter vector, so it is non-parametric.
+- ❌ C. Linear SVM learns parameters such as $w,b$.
+- ❌ D. A neural network learns many parameters/weights.
+
+PPT statement: KNN is a non-parametric method; linear models, SVMs, and neural networks are parametric models.
 
 ### 1.5
 
 **Answer: D**
 
-The noise term is intrinsic to the data-generating process and cannot be reduced by choosing a different model.
+- ✅ A. In the usual bias-variance tradeoff, increasing bias is associated with decreasing variance.
+- ✅ B. A more complex model often has smaller bias.
+- ✅ C. A more complex model often has larger variance.
+- ❌ D. The noise term is irreducible error from the data-generating process; model choice does not reduce it.
+
+PPT statement: Expected error decomposes into bias, variance, and irreducible noise; only bias and variance are controlled by model complexity.
 
 ### 1.6
 
 **Answer: B**
 
-Adding regularization terms penalizes overly complex parameter values and can reduce overfitting.
+- ❌ A. Decreasing the number of training samples usually increases overfitting risk.
+- ✅ B. Adding regularization terms penalizes overly complex parameters and can reduce overfitting.
+- ❌ C. A more complex hypothesis model usually increases overfitting risk.
+- ❌ D. Switching to a second-order optimizer changes optimization, not the statistical overfitting control.
+
+PPT statement: Overfitting is reduced by regularization, more training data, or simpler models; optimizers do not directly reduce model variance.
 
 ### 1.7
 
 **Answer: C**
 
-A neural network without nonlinear activation functions is equivalent to a linear model.
+- ❌ A. A neural network with one nonlinear hidden layer can have universal approximation ability under standard conditions.
+- ❌ B. The output dimension can be larger than the input dimension.
+- ✅ C. Without nonlinear activations, a composition of affine/linear layers is still affine/linear.
+- ❌ D. CNNs can contain fully connected layers after convolution/pooling layers.
+
+PPT statement: Nonlinear activation functions are what make multilayer neural networks nonlinear; CNN architectures may include convolutional, pooling, and fully connected layers.
 
 ### 1.8
 
 **Answer: D**
 
-Setting a small maximum depth restricts the tree and makes it shallow.
+- ❌ A. Decision trees can handle categorical attributes.
+- ❌ B. Decision trees are nonlinear, piecewise-constant models, not linear models.
+- ❌ C. A large minimum leaf size restricts splitting and makes the tree shallower.
+- ✅ D. A small maximum depth restricts the tree and makes it shallow.
+
+PPT statement: Tree complexity is controlled by maximum depth and minimum leaf size; smaller depth produces a shallower tree.
 
 ### 1.9
 
@@ -68,17 +108,34 @@ $$
 \frac{50+60}{2}=55.
 $$
 
+- ❌ A. Group A has 2 students, not 4.
+- ❌ B. Group B has 8 students, not 5.
+- ❌ C. K-means can change when the initial centroids change.
+- ✅ D. With the given assignments, the new centroid of Group A is 55.
+
+PPT statement: K-means alternates between nearest-centroid assignment and centroid update; the solution depends on initialization.
+
 ### 1.10
 
 **Answer: B**
 
-PCA is a linear projection method, not a nonlinear projection method.
+- ✅ A. PCA is an unsupervised method.
+- ❌ B. PCA is an orthogonal linear projection method, not a nonlinear projection method.
+- ✅ C. PCA chooses the $k$ eigenvectors with the largest eigenvalues.
+- ✅ D. PCA can reduce noise by keeping leading principal components and discarding low-variance components.
+
+PPT statement: PCA is a linear dimensionality-reduction method based on the top eigenvectors of the empirical covariance matrix.
 
 ### 1.11
 
 **Answer: D**
 
-GMM is usually more computationally expensive than K-means because it estimates soft responsibilities and Gaussian parameters.
+- ✅ A. GMM models component means and variances/covariances.
+- ✅ B. GMM parameters can be estimated by the EM algorithm.
+- ✅ C. GMM is a soft clustering method because it assigns posterior responsibilities.
+- ❌ D. GMM is usually more computationally expensive than K-means, not lower, because it estimates responsibilities and Gaussian parameters.
+
+PPT statement: K-means uses hard assignments and centroids; GMM-EM uses soft responsibilities plus mean, covariance, and mixing-weight updates.
 
 ### 1.12
 
@@ -104,17 +161,36 @@ $$
 
 not $4/6$. Therefore B is the incorrect statement.
 
+- ✅ A. Precision is $\frac{TP}{TP+FP}=\frac{5}{7}$.
+- ❌ B. Recall is $\frac{TP}{TP+FN}=\frac{5}{6}$, not $\frac46$.
+- ✅ C. Accuracy is $\frac{TP+TN}{TP+TN+FP+FN}=\frac{7}{10}$.
+- ✅ D. Higher AUC means the classifier ranks positives above negatives more often and is better overall.
+
+PPT statement: Precision, recall, accuracy, and AUC are defined by the confusion matrix and ranking scores; AUC ranges from 0.5 for random ranking to 1 for perfect ranking.
+
 ### 1.13
 
 **Answer: C**
 
-Following the course's simplified linear-system terminology, when $m>d$, the system is over-determined and usually has no exact solution.
+- ❌ A. When $m=d$, a unique solution is guaranteed only if $X$ is invertible; it is not guaranteed when $X^\top X$ is not invertible.
+- ❌ B. When $m>d$, the system is over-determined, not under-determined.
+- ✅ C. In the PPT's simplified terminology, $m>d$ is over-determined and has no exact solution.
+- ❌ D. When $m<d$, the system is under-determined and is described in the PPT as having infinitely many solutions, not no solution.
+
+PPT statement: Even-determined needs invertibility for a unique solution; over-determined means $m>d$; under-determined means $m<d$ with infinitely many solutions under the course wording.
+
+Strict math caveat: the existence/number of exact solutions also depends on rank and consistency. The selected answer follows the PPT's simplified exam convention.
 
 ### 1.14
 
 **Answer: D**
 
-Both logistic regression and softmax regression are usually optimized iteratively and have no closed-form solution.
+- ❌ A. Logistic regression does not maximize the margin; margin maximization is the SVM objective.
+- ❌ B. Softmax regression has a linear decision boundary in the feature space.
+- ❌ C. The sigmoid derivative is $g'(a)=g(a)(1-g(a))$, not $g(a)(1+g(a))$.
+- ✅ D. Both logistic regression and softmax regression are usually optimized iteratively and have no closed-form solution.
+
+PPT statement: Logistic/softmax regression minimize cross-entropy by iterative optimization; SVM is the large-margin classifier; sigmoid derivative is $g(a)(1-g(a))$.
 
 ### 1.15
 
@@ -129,7 +205,12 @@ $$
 The MSE is
 
 $$
-\frac{1+4+4+9+16+25+1+0+4+9}{10}=7.3.
+\begin{aligned}
+\mathrm{MSE}
+&=\frac{1}{10}\sum_{i=1}^{10}(h_i-9)^2\\
+&=\frac{1+4+4+9+16+25+1+0+4+9}{10}\\
+&=7.3.
+\end{aligned}
 $$
 
 The squared bias is
@@ -141,10 +222,20 @@ $$
 The empirical variance is
 
 $$
-\frac{1}{10}\sum_{i=1}^{10}(h_i-8.7)^2=7.21\approx7.2,
+\begin{aligned}
+\frac{1}{10}\sum_{i=1}^{10}(h_i-8.7)^2
+&=\frac{0.49+2.89+5.29+7.29+13.69+28.09+1.69+0.09+5.29+7.29}{10}\\
+&=7.21\approx7.2,
+\end{aligned}
 $$
 
 not $7.1$.
+
+- ✅ A. The empirical MSE is $7.3$.
+- ✅ B. The squared bias is $(8.7-8.5)^2=0.04$.
+- ❌ C. The empirical variance is $7.21\approx7.2$, not $7.1$.
+
+PPT statement: For the bias-variance calculation, use empirical mean prediction $\bar h$, squared bias $(\bar h-t)^2$, and empirical variance $\frac1M\sum_m(h_m-\bar h)^2$.
 
 ## 2 Calculations and Derivations
 
@@ -236,10 +327,20 @@ The input is $28\times28\times3$. The first convolution has $10$ filters of size
 
 ### (1) Feature-map sizes
 
+Use
+
+$$
+W_{out}=\left\lfloor\frac{W+2P-F}{S}\right\rfloor+1.
+$$
+
 For $Conv_1$:
 
 $$
-\frac{28+2\cdot1-6}{2}+1=13.
+\begin{aligned}
+W_1
+&=\left\lfloor\frac{28+2\cdot1-6}{2}\right\rfloor+1\\
+&=13.
+\end{aligned}
 $$
 
 Therefore,
@@ -251,7 +352,11 @@ $$
 For $MP_1$, using the common floor convention for pooling,
 
 $$
-\left\lfloor\frac{13-2}{2}\right\rfloor+1=6,
+\begin{aligned}
+W_{pool}
+&=\left\lfloor\frac{13-2}{2}\right\rfloor+1\\
+&=6,
+\end{aligned}
 $$
 
 so
@@ -263,7 +368,11 @@ $$
 For $Conv_2$:
 
 $$
-\frac{6-5}{1}+1=2,
+\begin{aligned}
+W_2
+&=\left\lfloor\frac{6+2\cdot0-5}{1}\right\rfloor+1\\
+&=2,
+\end{aligned}
 $$
 
 so
@@ -276,16 +385,20 @@ $$
 
 $$
 \begin{aligned}
-\#Conv_1&=10(6\cdot6\cdot3+1)=1090,\\
-\#Conv_2&=50(5\cdot5\cdot10+1)=12550,\\
-\#FC_1&=(2\cdot2\cdot50+1)\cdot10=2010.
+\#Conv_1&=10(6\cdot6\cdot3+1)=10(108+1)=1090,\\
+\#Conv_2&=50(5\cdot5\cdot10+1)=50(250+1)=12550,\\
+\#FC_1&=(2\cdot2\cdot50+1)\cdot10=(200+1)\cdot10=2010.
 \end{aligned}
 $$
 
 Total number of trainable parameters:
 
 $$
-1090+12550+2010=15650.
+\begin{aligned}
+\#Total
+&=1090+12550+2010\\
+&=15650.
+\end{aligned}
 $$
 
 ### (3) Computational graph
@@ -408,6 +521,8 @@ so we obtain the hard-margin constrained problem.
 
 ### (3) Lagrangian, KKT conditions, and support vectors
 
+This subquestion asks for the symbolic solution of $w,b$. Since no concrete training data are given, the solution is expressed through the optimal dual variables $\alpha^*$. The dual problem below is the intermediate problem used to obtain $\alpha^*$; the requested $w,b$ are recovered after that.
+
 The Lagrangian is
 
 $$
@@ -439,12 +554,28 @@ y_i(w^\top x_i+b)&\ge1,\\
 \end{aligned}
 $$
 
-The dual problem is
+Substitute the stationarity conditions into the Lagrangian. Since
+$w=\sum_i\alpha_i y_i x_i$ and $\sum_i\alpha_i y_i=0$,
+
+$$
+\begin{aligned}
+L(w,b,\alpha)
+&=\frac12\|w\|^2+\sum_{i=1}^n\alpha_i
+-\sum_{i=1}^n\alpha_i y_i w^\top x_i
+-b\sum_{i=1}^n\alpha_i y_i\\
+&=\frac12\|w\|^2+\sum_{i=1}^n\alpha_i-w^\top w\\
+&=\sum_{i=1}^n\alpha_i-\frac12\|w\|^2\\
+&=\sum_{i=1}^n\alpha_i-\frac12\sum_{i=1}^n\sum_{j=1}^n
+\alpha_i\alpha_j y_i y_j x_i^\top x_j.
+\end{aligned}
+$$
+
+Therefore the dual problem is
 
 $$
 \begin{aligned}
 \max_\alpha\quad
-&\sum_{i=1}^n\alpha_i-rac12\sum_{i=1}^n\sum_{j=1}^n
+&\sum_{i=1}^n\alpha_i-\frac12\sum_{i=1}^n\sum_{j=1}^n
 \alpha_i\alpha_j y_i y_j x_i^\top x_j\\
 \text{s.t.}\quad
 &\sum_{i=1}^n\alpha_i y_i=0,
@@ -453,16 +584,36 @@ $$
 \end{aligned}
 $$
 
+Let $\alpha^*$ be the optimizer of this dual problem. Then the requested weight vector is
+
+$$
+w^*=\sum_{i=1}^n\alpha_i^* y_i x_i.
+$$
+
+For any support vector $x_j$ with $\alpha_j^*>0$, complementary slackness gives
+
+$$
+y_j({w^*}^\top x_j+b^*)=1.
+$$
+
+Since $y_j\in\{-1,+1\}$,
+
+$$
+b^*=y_j-{w^*}^\top x_j.
+$$
+
+If there are several support vectors, compute this value for each one and average it.
+
 A sample is a support vector when
 
 $$
-\alpha_i>0.
+\alpha_i^*>0.
 $$
 
 By complementary slackness, such a point satisfies
 
 $$
-y_i(w^\top x_i+b)=1.
+y_i({w^*}^\top x_i+b^*)=1.
 $$
 
 ## 2.4 Gaussian mixture model and EM
@@ -525,7 +676,86 @@ $$
 N_k=\sum_{n=1}^N\gamma_{nk}.
 $$
 
-Then
+The M-step maximizes
+
+$$
+Q(\Theta)=\sum_{n=1}^N\sum_{k=1}^K\gamma_{nk}
+\left[\log\pi_k+\log\mathcal N(x^{(n)}\mid\mu_k,\Sigma_k)\right].
+$$
+
+For one component $k$, the relevant Gaussian part is
+
+$$
+\sum_{n=1}^N\gamma_{nk}
+\left[
+-\frac12\log|\Sigma_k|
+-\frac12(x^{(n)}-\mu_k)^\top\Sigma_k^{-1}(x^{(n)}-\mu_k)
+\right].
+$$
+
+Differentiate with respect to $\mu_k$:
+
+$$
+\begin{aligned}
+\frac{\partial Q}{\partial\mu_k}
+&=\Sigma_k^{-1}\sum_{n=1}^N\gamma_{nk}(x^{(n)}-\mu_k)=0\\
+&\Longrightarrow
+\mu_k^{new}=\frac{1}{N_k}\sum_{n=1}^N\gamma_{nk}x^{(n)}.
+\end{aligned}
+$$
+
+To derive the covariance update, substitute $\mu_k^{new}$ and define the weighted scatter matrix
+
+$$
+S_k=\sum_{n=1}^N\gamma_{nk}
+(x^{(n)}-\mu_k^{new})(x^{(n)}-\mu_k^{new})^\top.
+$$
+
+Use the precision matrix $\Lambda_k=\Sigma_k^{-1}$. Since
+$\log|\Sigma_k|=-\log|\Lambda_k|$, the covariance-dependent part is
+
+$$
+Q_k(\Lambda_k)
+=\frac{N_k}{2}\log|\Lambda_k|-\frac12\mathrm{Tr}(\Lambda_kS_k)+\text{const}.
+$$
+
+Taking the matrix derivative,
+
+$$
+\frac{\partial Q_k}{\partial\Lambda_k}
+=\frac{N_k}{2}\Lambda_k^{-T}-\frac12S_k^T=0.
+$$
+
+Because $\Lambda_k$ and $S_k$ are symmetric,
+
+$$
+N_k\Lambda_k^{-1}=S_k.
+$$
+
+Therefore
+
+$$
+\Sigma_k^{new}=\Lambda_k^{-1}
+=\frac{S_k}{N_k}
+=\frac{1}{N_k}\sum_{n=1}^N\gamma_{nk}
+(x^{(n)}-\mu_k^{new})(x^{(n)}-\mu_k^{new})^\top.
+$$
+
+For $\pi_k$, use a Lagrange multiplier:
+
+$$
+\sum_{k=1}^K N_k\log\pi_k+\lambda\left(\sum_{k=1}^K\pi_k-1\right).
+$$
+
+Thus
+
+$$
+\frac{N_k}{\pi_k}+\lambda=0
+\quad\Longrightarrow\quad
+\pi_k^{new}=\frac{N_k}{N}.
+$$
+
+Therefore
 
 $$
 \begin{aligned}
@@ -549,7 +779,12 @@ $$
 For **Color**:
 
 - Red: $3+$, $0-$, entropy $0$.
-- Blue: $1+$, $2-$, entropy $0.9183$.
+- Blue: $1+$, $2-$,
+
+$$
+H(Blue)=-\frac13\log_2\frac13-\frac23\log_2\frac23\approx0.9183.
+$$
+
 - Green: $0+$, $2-$, entropy $0$.
 
 Thus
@@ -566,8 +801,18 @@ $$
 
 For **Shape**:
 
-- Square: $3+$, $1-$, entropy $0.8113$.
-- Circle: $1+$, $2-$, entropy $0.9183$.
+- Square: $3+$, $1-$,
+
+$$
+H(Square)=-\frac34\log_2\frac34-\frac14\log_2\frac14\approx0.8113.
+$$
+
+- Circle: $1+$, $2-$,
+
+$$
+H(Circle)=-\frac13\log_2\frac13-\frac23\log_2\frac23\approx0.9183.
+$$
+
 - Triangle: $0+$, $1-$, entropy $0$.
 
 So
@@ -584,8 +829,17 @@ $$
 
 For **Size**:
 
-- Big: $3+$, $2-$, entropy $0.9710$.
-- Small: $1+$, $2-$, entropy $0.9183$.
+- Big: $3+$, $2-$,
+
+$$
+H(Big)=-\frac35\log_2\frac35-\frac25\log_2\frac25\approx0.9710.
+$$
+
+- Small: $1+$, $2-$,
+
+$$
+H(Small)=-\frac13\log_2\frac13-\frac23\log_2\frac23\approx0.9183.
+$$
 
 So
 
@@ -661,6 +915,23 @@ $$
 \tilde x^{(n)}-\mu=UU^\top(x^{(n)}-\mu).
 $$
 
+The mean of the reconstructed data is
+
+$$
+\begin{aligned}
+\tilde\mu
+&=\frac1N\sum_{n=1}^N\tilde x^{(n)}\\
+&=\mu+UU^\top\left(\frac1N\sum_{n=1}^N(x^{(n)}-\mu)\right)\\
+&=\mu.
+\end{aligned}
+$$
+
+Since $\tilde\mu=\mu$, the maximum-variance objective in the paper is
+
+$$
+J_{\mathrm{var}}(U)=\frac1N\sum_{n=1}^N\|\tilde x^{(n)}-\mu\|^2.
+$$
+
 Because $UU^\top(x^{(n)}-\mu)$ is the orthogonal projection of $x^{(n)}-\mu$ onto the subspace spanned by $U$, we have the Pythagorean decomposition
 
 $$
@@ -681,7 +952,7 @@ $$
 \frac1N\sum_{n=1}^N\|x^{(n)}-\tilde x^{(n)}\|^2.
 $$
 
-The left-hand side is independent of $U$. Therefore, maximizing projected variance
+The left-hand side is independent of $U$. Therefore, maximizing reconstructed-data variance
 
 $$
 \frac1N\sum_{n=1}^N\|\tilde x^{(n)}-\mu\|^2
@@ -693,13 +964,51 @@ $$
 \frac1N\sum_{n=1}^N\|x^{(n)}-\tilde x^{(n)}\|^2.
 $$
 
-To obtain $U$, form the empirical covariance matrix
+To obtain $U$, write the same variance objective in trace form:
+
+$$
+\begin{aligned}
+J_{\mathrm{var}}(U)
+&=\frac1N\sum_{n=1}^N\|\tilde x^{(n)}-\mu\|^2\\
+&=\frac1N\sum_{n=1}^N
+(x^{(n)}-\mu)^\top UU^\top(x^{(n)}-\mu)\\
+&=\mathrm{Tr}(U^\top\Sigma U),
+\end{aligned}
+$$
+
+where $\Sigma=\frac1N\sum_n(x^{(n)}-\mu)(x^{(n)}-\mu)^\top$. The reconstruction error is
+
+$$
+\begin{aligned}
+J_{\mathrm{rec}}(U)
+&=\frac1N\sum_{n=1}^N\|(I-UU^\top)(x^{(n)}-\mu)\|^2\\
+&=\mathrm{Tr}(\Sigma)-\mathrm{Tr}(U^\top\Sigma U).
+\end{aligned}
+$$
+
+Now form the empirical covariance matrix
 
 $$
 \Sigma=\frac1N\sum_{n=1}^N(x^{(n)}-\mu)(x^{(n)}-\mu)^\top.
 $$
 
-Then solve the eigenvalue problem
+To see why eigenvectors are obtained, first consider one direction $u$ with $u^\top u=1$ and maximize $u^\top\Sigma u$. The Lagrangian is
+
+$$
+\mathcal L(u,\lambda)=u^\top\Sigma u-\lambda(u^\top u-1).
+$$
+
+Stationarity gives
+
+$$
+\begin{aligned}
+\frac{\partial\mathcal L}{\partial u}
+&=2\Sigma u-2\lambda u=0\\
+&\Longrightarrow \Sigma u=\lambda u.
+\end{aligned}
+$$
+
+Thus we solve the eigenvalue problem
 
 $$
 \Sigma q_i=\lambda_i q_i,
