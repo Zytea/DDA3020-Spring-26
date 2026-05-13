@@ -191,7 +191,10 @@ The most common continuous distribution.
     *   $\mu$: mean (Mean)
     *   $\sigma^2$: variance (Variance)
 *   **Multivariate Gaussian Distribution (D-dimensional vector x)**:
-    $$ \mathcal{N}(\mathbf{x}|\boldsymbol{\mu}, \Sigma) = \frac{1}{(2\pi)^{D/2} |\Sigma|^{1/2}} \exp\left( -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu})^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}) \right) $$
+    $$
+    \mathcal{N}(\mathbf{x}|\boldsymbol{\mu}, \Sigma) = \frac{1}{(2\pi)^{D/2} |\Sigma|^{1/2}} \exp\left( -\frac{1}{2} (\mathbf{x} - \boldsymbol{\mu})^T \Sigma^{-1} (\mathbf{x} - \boldsymbol{\mu}) \right)
+    $$
+    
     *   $\boldsymbol{\mu}$: $D$-dimensional mean vector.
     *   $\Sigma$: $D \times D$ covariance matrix (Covariance Matrix).
     *   $|\Sigma|$: determinant of the covariance matrix.

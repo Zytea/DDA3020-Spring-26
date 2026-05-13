@@ -964,7 +964,13 @@ $$
 \frac1N\sum_{n=1}^N\|x^{(n)}-\tilde x^{(n)}\|^2.
 $$
 
-To obtain $U$, write the same variance objective in trace form:
+To obtain $U$, define the empirical covariance matrix
+
+$$
+\Sigma=\frac1N\sum_{n=1}^N(x^{(n)}-\mu)(x^{(n)}-\mu)^\top.
+$$
+
+Then write the reconstructed-data variance objective in trace form:
 
 $$
 \begin{aligned}
@@ -976,48 +982,52 @@ J_{\mathrm{var}}(U)
 \end{aligned}
 $$
 
-where $\Sigma=\frac1N\sum_n(x^{(n)}-\mu)(x^{(n)}-\mu)^\top$. The reconstruction error is
+Solve
 
 $$
-\begin{aligned}
-J_{\mathrm{rec}}(U)
-&=\frac1N\sum_{n=1}^N\|(I-UU^\top)(x^{(n)}-\mu)\|^2\\
-&=\mathrm{Tr}(\Sigma)-\mathrm{Tr}(U^\top\Sigma U).
-\end{aligned}
-$$
-
-Now form the empirical covariance matrix
-
-$$
-\Sigma=\frac1N\sum_{n=1}^N(x^{(n)}-\mu)(x^{(n)}-\mu)^\top.
-$$
-
-To see why eigenvectors are obtained, first consider one direction $u$ with $u^\top u=1$ and maximize $u^\top\Sigma u$. The Lagrangian is
-
-$$
-\mathcal L(u,\lambda)=u^\top\Sigma u-\lambda(u^\top u-1).
-$$
-
-Stationarity gives
-
-$$
-\begin{aligned}
-\frac{\partial\mathcal L}{\partial u}
-&=2\Sigma u-2\lambda u=0\\
-&\Longrightarrow \Sigma u=\lambda u.
-\end{aligned}
-$$
-
-Thus we solve the eigenvalue problem
-
-$$
-\Sigma q_i=\lambda_i q_i,
+\max_U\quad \mathrm{Tr}(U^\top\Sigma U)
 \qquad
-\lambda_1\ge\lambda_2\ge\cdots\ge\lambda_D.
+\text{s.t.}\quad U^\top U=I.
 $$
 
-The PCA projection matrix is formed by the top $K$ eigenvectors:
+Use the matrix Lagrangian
 
 $$
+\mathcal L(U,\Lambda)
+=\mathrm{Tr}(U^\top\Sigma U)+\mathrm{Tr}\left(\Lambda^\top(I-U^\top U)\right),
+$$
+
+where $\Lambda=\mathrm{diag}(\lambda_1,\ldots,\lambda_K)$. Stationarity gives
+
+$$
+\frac{\partial\mathcal L}{\partial U}
+=2\Sigma U-2U\Lambda=0,
+$$
+
+so
+
+$$
+\Sigma U=U\Lambda.
+$$
+
+Column by column, this means
+
+$$
+\Sigma u_k=\lambda_k u_k,\qquad k=1,\ldots,K.
+$$
+
+Thus the columns of $U$ are eigenvectors of $\Sigma$. Substituting into the objective gives
+
+$$
+\mathrm{Tr}(U^\top\Sigma U)
+=\sum_{k=1}^K u_k^\top\Sigma u_k
+=\sum_{k=1}^K \lambda_k.
+$$
+
+To maximize the objective, choose the eigenvectors corresponding to the largest $K$ eigenvalues:
+
+$$
+\lambda_1\ge\lambda_2\ge\cdots\ge\lambda_D,
+\qquad
 U=[q_1,q_2,\ldots,q_K].
 $$
